@@ -1,1 +1,26 @@
+img {
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
+}
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    overflow-y: scroll;
+    text-align: center;
+    background-color: rgba(230, 38, 38, 0.763);
+    padding: 1rem;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}

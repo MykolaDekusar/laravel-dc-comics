@@ -13,6 +13,18 @@
     <h1>
         Template
     </h1>
+    <div class="container">
+        <div class="row">
+            @foreach ($comics as $comic)
+                <div class="card">
+                    <h2>{{ $comic->title }}</h2>
+                    <img src="{{ $comic->thumb }}" alt="">
+                    <h3>{{ $comic->price }}</h3>
+
+                </div>
+            @endforeach
+        </div>
+    </div>
 </body>
 
 </html>

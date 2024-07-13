@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DcComic;
 use Illuminate\Http\Request;
 
-class DcComicsResourceController extends Controller
+use function PHPUnit\Framework\isNull;
+
+class DcComicsRouteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $comics = DcComic::All();
+        return view('comics.index', compact('comics'));
     }
 
     /**
@@ -35,7 +39,13 @@ class DcComicsResourceController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $comic = DcComic::find($id);
+        if (is_null($comic)) {
+            $comics = DcComic::All();
+            $id = 0;
+            return view('comics.index', compact('comics'));
+        }
+        return view('comics.show', compact('comic'));
     }
 
     /**

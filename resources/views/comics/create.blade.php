@@ -66,7 +66,7 @@
 
         </div>
     </div>
-
+    @include('utils.footer')
 </body>
 
 </html>

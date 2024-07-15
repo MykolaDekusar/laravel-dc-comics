@@ -11,21 +11,24 @@
 
 <body>
     @include('utils.header')
-    <div class="container">
-        <div class="row">
-            @foreach ($comics as $comic)
-                <div class="card">
-                    <h2>{{ $comic->title }}</h2>
-                    <div class="img-settings">
-                        <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+    <main>
+        <div class="container">
+            <div class="row">
+                @foreach ($comics as $comic)
+                    <div class="card">
+                        <h2>{{ $comic->title }}</h2>
+                        <div class="img-settings">
+                            <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                        </div>
+                        <div class="content">
+                            <button onclick="window.location='{{ route('comics.show', $comic->id) }}'">About</button>
+                        </div>
                     </div>
-                    <div class="content">
-                        <button onclick="window.location='{{ route('comics.show', $comic->id) }}'">About</button>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
+    </main>
+    @include('utils.footer')
 </body>
 
 </html>

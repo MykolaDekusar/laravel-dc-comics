@@ -70,10 +70,9 @@
                     <button onclick="window.location='{{ route('comics.index') }}'">Go Back</button>
                 </div>
             </div>
-
         </div>
     </div>
-
+    @include('utils.footer')
 </body>
 
 </html>

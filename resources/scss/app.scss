@@ -58,7 +58,9 @@ img {
     background-color: rgba(202, 7, 7, 0.634);
     padding: 1rem 2rem;
     .content {
-        margin-top: 1rem;
+        margin: 1rem;
+        display: flex;
+        justify-content: center;
         gap: 1rem;
     }
     .card-title,

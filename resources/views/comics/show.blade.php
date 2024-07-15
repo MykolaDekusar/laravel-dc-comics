@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <div class="card-extended">
         <div class="card-title">
             <h2>{{ $comic->title }}</h2>
@@ -34,6 +35,11 @@
         <div class="content">
             <button onclick="window.location='{{ route('comics.index') }}'">Torna alla home</button>
             <button onclick="window.location='{{ route('comics.create') }}'">Crea nuovo comic</button>
+            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button>Elimina Comic</button>
+            </form>
         </div>
     </div>
 </body>

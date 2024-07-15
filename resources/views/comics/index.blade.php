@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    @include('comics.header')
+    @include('utils.header')
     <div class="container">
         <div class="row">
             @foreach ($comics as $comic)

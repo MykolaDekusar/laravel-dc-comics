@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\DcComic;
 use Illuminate\Http\Request;
 
-use function PHPUnit\Framework\isEmpty;
-use function PHPUnit\Framework\isNull;
-
 class DcComicsRouteController extends Controller
 {
     /**
@@ -34,6 +31,7 @@ class DcComicsRouteController extends Controller
     {
         $data = $request->all();
         $comic = new DcComic();
+        // mass create method
         $comic->fill($data);
         $comic->save();
 
@@ -58,15 +56,20 @@ class DcComicsRouteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $comic = DcComic::findOrFail($id);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, /*string $id*/ DcComic $comic)
     {
-        //
+        // $comic = DcComic::findOrFail($id); usind alternative DcComic $comic
+        $data = $request->all();
+        // mass update method also contains save
+        $comic->update($data);
+        return redirect()->route('comics.show', $comic);
     }
 
     /**

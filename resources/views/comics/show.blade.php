@@ -18,7 +18,7 @@
         <div class="card-type">
             <p>Type: {{ $comic->type }}</p>
         </div>
-        <img src="{{ $comic->thumb }}" alt="">
+        <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
         <div class="card-price">
             <h3>Price: {{ $comic->price }}</h3>
         </div>
@@ -33,12 +33,13 @@
         </div>
 
         <div class="content">
-            <button onclick="window.location='{{ route('comics.index') }}'">Torna alla home</button>
-            <button onclick="window.location='{{ route('comics.create') }}'">Crea nuovo comic</button>
+            <button onclick="window.location='{{ route('comics.index') }}'">Home</button>
+            <button onclick="window.location='{{ route('comics.create') }}'">Create new Comic</button>
+            <button onclick="window.location='{{ route('comics.edit', $comic->id) }}'">Modify Comic</button>
             <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button>Elimina Comic</button>
+                <button onclick="return confirm('Are you sure you want to delete the comic?')">Delete Comic</button>
             </form>
         </div>
     </div>

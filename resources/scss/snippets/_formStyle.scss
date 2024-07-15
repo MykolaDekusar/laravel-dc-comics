@@ -1,0 +1,15 @@
+.form-content {
+    margin: 1rem;
+    color: white;
+    font-size: 25px;
+}
+
+form {
+    background-color: rgba(143, 8, 8, 0.763);
+    padding: 2rem;
+    border-radius: 15px;
+    .button {
+        display: flex;
+        justify-content: center;
+    }
+}

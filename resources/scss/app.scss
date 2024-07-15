@@ -1,7 +1,13 @@
-img {
-    object-fit: contain;
-    width: 300px;
-    height: 300px;
+@use "./snippets/formStyle" as *;
+@use "./snippets/headerStyle" as *;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(36, 36, 36, 0.979);
 }
 
 .container {
@@ -12,26 +18,57 @@ img {
 
 .card {
     width: 300px;
+    color: white;
     overflow-y: scroll;
     text-align: center;
-    background-color: rgba(230, 38, 38, 0.763);
+    background-color: rgba(143, 8, 8, 0.763);
+    box-shadow: 5px 5px 5px rgba(80, 75, 75, 0.59);
     padding: 2rem 1rem;
     h2 {
         height: 50px;
     }
+    .img-settings {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 200px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
     border-radius: 1rem;
+}
+
+img {
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
 }
 
 .card-extended {
     position: absolute;
+    color: white;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1200px;
+    height: 80dvh;
     overflow-y: scroll;
     text-align: center;
-    background-color: rgba(230, 38, 38, 0.763);
-    padding: 1rem;
+    background-color: rgba(202, 7, 7, 0.634);
+    padding: 1rem 2rem;
+    .content {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    .card-title,
+    .card-type,
+    .card-price,
+    .card-description,
+    .card-styled,
+    .card-written {
+        margin-bottom: 2rem;
+    }
 }
 .row {
     display: flex;
@@ -42,15 +79,39 @@ img {
 }
 
 button {
-    background-color: blue;
-    border: none;
+    border: 2px solid black;
+    width: 175px;
     padding: 1rem;
     border-radius: 15px;
     cursor: pointer;
     color: white;
     font-size: 15px;
+    background: linear-gradient(
+        270deg,
+        hsla(0, 99%, 34%, 0.8),
+        rgba(0, 0, 255, 0.8),
+        rgba(0, 191, 255, 0.8)
+    );
+    background-size: 200% 200%;
+    animation: gradient-animation 10s linear infinite;
+
+    @keyframes gradient-animation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 }
 
 button:hover {
-    background-color: rgba(0, 0, 255, 0.488);
+    background-color: rgb(255, 0, 0);
+}
+
+.card:hover {
+    box-shadow: 5px 5px 5px rgba(255, 53, 53, 0.718);
 }

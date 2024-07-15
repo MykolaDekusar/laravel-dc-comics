@@ -10,14 +10,16 @@
 </head>
 
 <body>
+    @include('comics.header')
     <div class="container">
         <div class="row">
             @foreach ($comics as $comic)
                 <div class="card">
                     <h2>{{ $comic->title }}</h2>
-                    <img src="{{ $comic->thumb }}" alt="">
+                    <div class="img-settings">
+                        <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                    </div>
                     <div class="content">
-                        <h3>Price: {{ $comic->price }}</h3>
                         <button onclick="window.location='{{ route('comics.show', $comic->id) }}'">About</button>
                     </div>
                 </div>

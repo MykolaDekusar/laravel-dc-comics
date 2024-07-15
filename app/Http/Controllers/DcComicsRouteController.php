@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DcComic;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isEmpty;
 use function PHPUnit\Framework\isNull;
 
 class DcComicsRouteController extends Controller
@@ -23,7 +24,7 @@ class DcComicsRouteController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -31,7 +32,12 @@ class DcComicsRouteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $comic = new DcComic();
+        $comic->fill($data);
+        $comic->save();
+
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -40,12 +46,11 @@ class DcComicsRouteController extends Controller
     public function show(string $id)
     {
         $comic = DcComic::find($id);
-        if (is_null($comic)) {
-            $comics = DcComic::All();
-            $id = 0;
-            return view('comics.index', compact('comics'));
+        if ($comic !== null) {
+            return view('comics.show', compact('comic'));
+        } else {
+            return redirect()->route('comics.index');
         }
-        return view('comics.show', compact('comic'));
     }
 
     /**

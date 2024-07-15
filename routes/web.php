@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [DcComicsRouteController::class, 'index'])->name('home');
 Route::resource('comics', DcComicsRouteController::class);

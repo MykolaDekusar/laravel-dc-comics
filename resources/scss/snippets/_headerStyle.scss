@@ -1,0 +1,40 @@
+header {
+    height: 350px;
+    background-image: url(https://bangydreams.it/cdn/shop/collections/dc-comics-19749.jpg?v=1649670467);
+    background-position-y: -150px;
+    background-size: cover;
+    h1 {
+        font-size: 50px;
+        color: white;
+        padding: 5rem;
+        background-color: red;
+        border-radius: 15px;
+        background: linear-gradient(
+            270deg,
+            rgba(0, 191, 255, 0.8),
+            rgba(0, 0, 255, 0.8),
+            hsla(0, 99%, 34%, 0.8)
+        );
+        background-size: 150% 150%;
+        animation: gradient-animation 10s linear infinite;
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    }
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

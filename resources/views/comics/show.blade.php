@@ -11,14 +11,30 @@
 
 <body>
     <div class="card-extended">
-        <h2>{{ $comic->title }}</h2>
-        <p>Type: {{ $comic->type }}</p>
+        <div class="card-title">
+            <h2>{{ $comic->title }}</h2>
+        </div>
+        <div class="card-type">
+            <p>Type: {{ $comic->type }}</p>
+        </div>
         <img src="{{ $comic->thumb }}" alt="">
-        <h3>Price: {{ $comic->price }}</h3>
-        <h4>{{ $comic->description }} <br>First sale date: {{ $comic->sale_date }}</h4>
-        <h3>Styled by: {{ $comic->artists }}</h3>
-        <h3>Written by: {{ $comic->writers }}</h3>
-        <button onclick="window.location='{{ route('comics.index') }}'">Torna alla home</button>
+        <div class="card-price">
+            <h3>Price: {{ $comic->price }}</h3>
+        </div>
+        <div class="card-description">
+            <h4>{{ $comic->description }} <br>First sale date: {{ $comic->sale_date }}</h4>
+        </div>
+        <div class="card-styled">
+            <h3>Styled by: {{ $comic->artists }}</h3>
+        </div>
+        <div class="card-written">
+            <h3>Written by: {{ $comic->writers }}</h3>
+        </div>
+
+        <div class="content">
+            <button onclick="window.location='{{ route('comics.index') }}'">Torna alla home</button>
+            <button onclick="window.location='{{ route('comics.create') }}'">Crea nuovo comic</button>
+        </div>
     </div>
 </body>
 

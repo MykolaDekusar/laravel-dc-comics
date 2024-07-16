@@ -49,16 +49,12 @@ img {
 }
 
 .card-extended {
-    position: absolute;
     color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 1200px;
-    height: 80dvh;
-    overflow-y: scroll;
+    margin: 5rem auto;
     text-align: center;
     background-color: rgba(202, 7, 7, 0.634);
+    border-radius: 15px;
     padding: 1rem 2rem;
     .content {
         margin: 1rem;
@@ -68,6 +64,7 @@ img {
     }
     .card-title,
     .card-type,
+    img,
     .card-price,
     .card-description,
     .card-styled,

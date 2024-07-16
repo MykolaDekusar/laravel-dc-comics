@@ -10,10 +10,9 @@
 </head>
 
 <body>
+    @include('utils.header_show')
     <div class="card-extended">
-        <div class="card-title">
-            <h2>{{ $comic->title }}</h2>
-        </div>
+
         <div class="card-type">
             <p>Type: {{ $comic->type }}</p>
         </div>
@@ -35,12 +34,9 @@
             <button onclick="window.location='{{ route('comics.index') }}'">Home</button>
             <button onclick="window.location='{{ route('comics.create') }}'">Create new Comic</button>
             <button onclick="window.location='{{ route('comics.edit', $comic->id) }}'">Modify Comic</button>
-
             <button id="myBtn">Delete Comic</button>
-
         </div>
     </div>
-
     <!-- The Modal -->
     <div id="myModal" class="modal">
         <!-- Modal content -->
@@ -55,8 +51,9 @@
                 <button class="close">Close</button>
             </div>
         </div>
-
     </div>
+    @include('utils.footer')
 </body>
+
 
 </html>

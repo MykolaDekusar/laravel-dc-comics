@@ -14,6 +14,7 @@
     <main>
         <div class="container">
             <div class="row">
+                <button onclick="window.location='{{ route('comics.create') }}'">Create new Comic</button>
                 @foreach ($comics as $comic)
                     <div class="card">
                         <h2>{{ $comic->title }}</h2>

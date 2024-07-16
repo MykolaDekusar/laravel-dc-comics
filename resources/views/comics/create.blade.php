@@ -16,6 +16,19 @@
             <div class="form">
                 <form action="{{ route('comics.store') }}" method="POST">
                     @csrf
+                    @if ($errors->any())
+                        <div>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @dd($error)
+                                @endforeach
+                            </ul>
+                        </div>
+
+                    @endif
+
+
                     <div class="form-content">
                         <label for="title">Title: </label>
                         <input type="text" name="title" placeholder="Title">

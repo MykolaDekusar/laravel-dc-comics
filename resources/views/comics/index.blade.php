@@ -14,7 +14,8 @@
     <main>
         <div class="container">
             <div class="row">
-                <button onclick="window.location='{{ route('comics.create') }}'">Create new Comic</button>
+                <button class="home-create" onclick="window.location='{{ route('comics.create') }}'">Crea nuovo
+                    fumetto</button>
                 @foreach ($comics as $comic)
                     <div class="card">
                         <h2>{{ $comic->title }}</h2>
@@ -22,7 +23,7 @@
                             <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                         </div>
                         <div class="content">
-                            <button onclick="window.location='{{ route('comics.show', $comic->id) }}'">About</button>
+                            <button onclick="window.location='{{ route('comics.show', $comic->id) }}'">Espandi</button>
                         </div>
                     </div>
                 @endforeach

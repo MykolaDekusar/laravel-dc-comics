@@ -20,7 +20,11 @@
             <h3>Price: {{ $comic->price }}</h3>
         </div>
         <div class="card-description">
-            <h4>{{ $comic->description }} <br>First sale date: {{ $comic->sale_date }}</h4>
+            <h4>{{ $comic->description }}
+                <br>
+                <br>
+                First sale date: {{ $comic->sale_date }}
+            </h4>
         </div>
         <div class="card-styled">
             <h3>Styled by: {{ $comic->artists }}</h3>

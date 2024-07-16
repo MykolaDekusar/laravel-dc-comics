@@ -20,7 +20,7 @@ body {
 }
 
 .card {
-    width: 300px;
+    width: 280px;
     color: white;
     overflow-y: scroll;
     text-align: center;
@@ -73,11 +73,17 @@ img {
     }
 }
 .row {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 1rem;
+    .home-create {
+        position: absolute;
+        right: 5px;
+        top: -67px;
+    }
 }
 
 button {

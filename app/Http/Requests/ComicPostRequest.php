@@ -25,7 +25,7 @@ class ComicPostRequest extends FormRequest
             'title' => 'required|string|min:3|max:50',
             'description' => 'string|min:10|nullable',
             'thumb' => 'string|max:255|nullable',
-            'price' => 'required|numeric',
+            'price' => 'required|string',
             'series' => 'required|string',
             'sale_date' => 'nullable| date_format:Y-m-d',
             'artists' => 'string|nullable',

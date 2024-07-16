@@ -64,7 +64,7 @@ class DcComicsRouteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, /*string $id*/ DcComic $comic)
+    public function update(ComicPostRequest $request, /*string $id*/ DcComic $comic)
     {
         // $comic = DcComic::findOrFail($id); usind alternative DcComic $comic
         $data = $request->all();

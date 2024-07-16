@@ -22,7 +22,14 @@ class ComicPostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|min:3|max:100'
+            'title' => 'required|string|min:3|max:50',
+            'description' => 'string|min:10|nullable',
+            'thumb' => 'string|max:255|nullable',
+            'price' => 'required|numeric',
+            'series' => 'required|string',
+            'sale_date' => 'nullable| date_format:Y-m-d',
+            'artists' => 'string|nullable',
+            'writers' => 'string|nullable'
         ];
     }
 }

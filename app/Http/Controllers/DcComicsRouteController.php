@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ComicPostRequest;
 use App\Models\DcComic;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,7 @@ class DcComicsRouteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ComicPostRequest $request)
     {
         $data = $request->all();
         $comic = new DcComic();

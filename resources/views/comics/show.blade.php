@@ -12,7 +12,6 @@
 <body>
     @include('utils.header_show')
     <div class="card-extended">
-
         <div class="card-type">
             <p>Type: {{ $comic->type }}</p>
         </div>

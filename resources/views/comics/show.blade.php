@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="card-extended">
         <div class="card-title">
             <h2>{{ $comic->title }}</h2>
@@ -36,12 +35,27 @@
             <button onclick="window.location='{{ route('comics.index') }}'">Home</button>
             <button onclick="window.location='{{ route('comics.create') }}'">Create new Comic</button>
             <button onclick="window.location='{{ route('comics.edit', $comic->id) }}'">Modify Comic</button>
-            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button onclick="return confirm('Are you sure you want to delete the comic?')">Delete Comic</button>
-            </form>
+
+            <button id="myBtn">Delete Comic</button>
+
         </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Are you sure you want to delete this precious comic?</p>
+            <div class="modal-buttons">
+                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button>Confirm</button>
+                </form>
+                <button class="close">Close</button>
+            </div>
+        </div>
+
     </div>
 </body>
 

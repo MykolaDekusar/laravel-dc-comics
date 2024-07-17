@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ComicPostRequest;
+use App\Http\Requests\UpdateComicPostRequest;
 use App\Models\DcComic;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,7 @@ class DcComicsRouteController extends Controller
      */
     public function store(ComicPostRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $comic = new DcComic();
         // mass create method
         $comic->fill($data);
@@ -64,10 +65,10 @@ class DcComicsRouteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ComicPostRequest $request, /*string $id*/ DcComic $comic)
+    public function update(UpdateComicPostRequest $request, /*string $id*/ DcComic $comic)
     {
         // $comic = DcComic::findOrFail($id); usind alternative DcComic $comic
-        $data = $request->all();
+        $data = $request->validated();
         // mass update method also contains save
         $comic->update($data);
         return redirect()->route('comics.show', $comic);

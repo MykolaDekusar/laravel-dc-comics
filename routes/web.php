@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\DcComicsRouteController;
-use App\Http\Controllers\Guest\DcComicController;
+use App\Http\Controllers\Admin\DcComicsRouteController;
 use Illuminate\Support\Facades\Route;
 
 /*
